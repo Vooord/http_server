@@ -1,0 +1,29 @@
+<style>
+	label{
+		width: 100px;
+		display: inline-block;
+	}	
+</style>
+
+<form method="GET" action='/' name='get_form' onsubmit="change_uri(this);">
+    <label for="get_uri">GET-URI</label>
+    <input type="text" name="get_uri">
+    <input type="submit" value="GET">
+</form>
+  
+<form method="POST" action='/' name='post_form' onsubmit="change_uri(this);">
+    <label for="post_uri">POST-URI</label>
+    <input type="text" name="post_uri">
+    <input type='submit' value="POST">
+</form>
+
+
+<script>
+  function change_uri(form) {
+	if (form.method.toLowerCase() == 'get') {
+	  form.action = form.get_uri.value;
+	} else {
+	  form.action = form.post_uri.value;
+	}
+  }
+</script>  
